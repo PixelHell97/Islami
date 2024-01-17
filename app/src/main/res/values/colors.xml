@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#F8F8F8</color>
+    <color name="my_primary">#B7935F</color>
+    <color name="colorTransparent">#0000</color>
+    <color name="textColor">#242424</color>
+    <color name="textFragmentColor">#242424</color>
+    <color name="selectedColor">#242424</color>
+    <color name="viewColor">#B7935F</color>
+</resources>
