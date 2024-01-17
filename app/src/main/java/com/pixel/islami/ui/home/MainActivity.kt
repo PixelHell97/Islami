@@ -2,6 +2,7 @@ package com.pixel.islami.ui.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.pixel.islami.R
 import com.pixel.islami.databinding.ActivityMainBinding
@@ -12,12 +13,33 @@ import com.pixel.islami.ui.home.sebha.SebhaFragment
 
 class MainActivity : AppCompatActivity() {
 
+    private var isNightMode: Boolean = false
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        changeNightMode()
         initView()
+    }
+
+    private fun changeNightMode() {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO)
+            isNightMode = false
+        else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+            isNightMode = true
+        else
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+        binding.nightModeSwitcher.setOnClickListener {
+            if (isNightMode) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                isNightMode = false
+            }else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                isNightMode = true
+            }
+        }
     }
 
     private fun initView() {

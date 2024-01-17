@@ -25,6 +25,16 @@
                 android:textColor="@color/textFragmentColor"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/night_mode_switcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="24dp"
+                android:background="@color/colorTransparent"
+                android:src="@drawable/btn_mode" />
+
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
