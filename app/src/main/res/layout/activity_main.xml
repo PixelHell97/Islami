@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/app_main_background"
     tools:context=".ui.home.MainActivity">
 
@@ -33,7 +32,8 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="24dp"
                 android:background="@color/colorTransparent"
-                android:src="@drawable/btn_mode" />
+                android:src="@drawable/btn_mode"
+                android:contentDescription="change mode" />
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>

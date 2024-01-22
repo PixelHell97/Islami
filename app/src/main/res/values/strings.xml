@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Islami</string>
+    <string name="app_name">اسلامي</string>
     <string name="quran">Quran</string>
     <string name="hadith">Hadith</string>
     <string name="sebha">Sebha</string>
     <string name="radio">Radio</string>
-    <string name="chapter_name">Chapter Name</string>
-    <string name="ahadith">Ahadith</string>
-    <string name="holy_quran_radio">Holy Quran Radio</string>
-    <string name="number_of_praises">Number of praises</string>
+    <string name="chapter_name">اسم السورة</string>
+    <string name="ahadith">أحاديث</string>
+    <string name="holy_quran_radio">إذاعة القرآن الكريم</string>
+    <string name="number_of_praises">عدد التسبيحات</string>
 </resources>
