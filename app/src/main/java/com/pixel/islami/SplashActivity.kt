@@ -7,12 +7,12 @@ import android.os.Handler
 import android.view.WindowManager
 import com.pixel.islami.ui.home.MainActivity
 
-class SplashScreen : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        Handler().postDelayed({
+        Handler(mainLooper).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
