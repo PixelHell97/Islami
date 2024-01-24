@@ -7,17 +7,40 @@
     android:padding="4dp">
 
     <TextView
-        android:id="@+id/chapter_name"
-        android:layout_width="match_parent"
+        android:id="@+id/chapter_number"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_marginHorizontal="10dp"
         android:textSize="24sp"
         android:textColor="@color/textFragmentColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/chapter_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
+        android:gravity="center"
+        android:textColor="@color/textFragmentColor"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="الفاتحه"/>
+        tools:text="الفاتحه" />
 
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/textFragmentColor"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="12"
+        />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

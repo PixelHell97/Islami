@@ -8,6 +8,6 @@
     <string name="ahadith">أحاديث</string>
     <string name="holy_quran_radio">إذاعة القرآن الكريم</string>
     <string name="number_of_praises">عدد التسبيحات</string>
-    <string name="right_arch">﴿</string>
-    <string name="left_arch">﴾</string>
+    <string name="number_of_chapter">م</string>
+    <string name="number_of_verses">عدد الايات</string>
 </resources>

@@ -18,7 +18,7 @@ class ChapterRecycleAdapter(private val chaptersList: List<String>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val title = chaptersList[position]
-        holder.bind(title)
+        holder.bind(title, position+1)
         onChapterClickListener?.let {onChapterClickListener ->
             holder.itemView.setOnClickListener {
                 onChapterClickListener.onChapterClick(title, position)
@@ -37,8 +37,9 @@ class ChapterRecycleAdapter(private val chaptersList: List<String>) :
     class ViewHolder(private val binding: ItemChapterBinding) : RecyclerView.ViewHolder(
         binding.root
     ) {
-        fun bind(title: String) {
+        fun bind(title: String, position: Int) {
             binding.chapterName.text = title
+            binding.chapterNumber.text = position.toString()
         }
     }
 }
