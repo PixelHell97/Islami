@@ -18,7 +18,7 @@ class VerseRecycleAdapter(private val verses: List<String>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val title = verses[position]
-        holder.bind(title)
+        holder.bind(title, position)
         onChapterClickListener?.let {onChapterClickListener ->
             holder.itemView.setOnClickListener {
                 onChapterClickListener.onChapterClick(title, position)
@@ -37,8 +37,9 @@ class VerseRecycleAdapter(private val verses: List<String>) :
     class ViewHolder(private val binding: ItemVerseBinding) : RecyclerView.ViewHolder(
         binding.root
     ) {
-        fun bind(title: String) {
+        fun bind(title: String, position: Int) {
             binding.verseLine.text = title
+            binding.verseNumber.text = position.toString()
         }
     }
 }
