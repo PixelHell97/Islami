@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_main_background"
+    android:background="@drawable/background_app_main"
     tools:context=".ui.suraDetails.SuraDetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout

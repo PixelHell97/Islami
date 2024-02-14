@@ -10,4 +10,7 @@
     <string name="number_of_praises">عدد التسبيحات</string>
     <string name="number_of_chapter">م</string>
     <string name="number_of_verses">عدد الايات</string>
+    <string name="play">Play</string>
+    <string name="skip">Skip</string>
+    <string name="back">Back</string>
 </resources>
