@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_app_main"
+    android:background="@drawable/bg_app"
     tools:context=".ui.home.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -33,7 +33,7 @@
                 android:layout_marginEnd="24dp"
                 android:background="@color/colorTransparent"
                 android:src="@drawable/ic_btn_mode"
-                android:contentDescription="change mode" />
+                android:visibility="gone"/>
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
