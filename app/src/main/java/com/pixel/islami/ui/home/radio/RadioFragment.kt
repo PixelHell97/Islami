@@ -59,7 +59,7 @@ class RadioFragment : Fragment() {
     private fun initRadios(radios: List<Radio?>?) {
         mediaPlayer = MediaPlayer()
         binding.btnPlay.setOnClickListener {
-            if (mediaPlayer!!.isPlaying) {
+            if (!mediaPlayer!!.isPlaying) {
                 mediaPlayer?.reset()
                 playRadio(radios!![currentPosition])
             } else {
