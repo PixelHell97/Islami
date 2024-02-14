@@ -18,7 +18,7 @@ import retrofit2.Response
 
 class RadioFragment : Fragment() {
     private lateinit var binding: FragmentRadioBinding
-    private lateinit var mediaPlayer: MediaPlayer
+    private var mediaPlayer: MediaPlayer? = null
     private var currentPosition = 0
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +49,7 @@ class RadioFragment : Fragment() {
                         showErrorMessage("Internet must be enabled")
                     }
                 }
+
                 override fun onFailure(call: Call<RadioResources>, t: Throwable) {
                     showErrorMessage(t.message)
                 }
@@ -58,22 +59,22 @@ class RadioFragment : Fragment() {
     private fun initRadios(radios: List<Radio?>?) {
         mediaPlayer = MediaPlayer()
         binding.btnPlay.setOnClickListener {
-            if (!mediaPlayer.isPlaying) {
-                mediaPlayer.reset()
+            if (mediaPlayer!!.isPlaying) {
+                mediaPlayer?.reset()
                 playRadio(radios!![currentPosition])
             } else {
-                mediaPlayer.pause()
+                mediaPlayer?.pause()
                 binding.btnPlay.setImageResource(R.drawable.ic_play)
             }
         }
         binding.btnNext.setOnClickListener {
             nextChanel(radios?.size)
-            mediaPlayer.reset()
+            mediaPlayer?.reset()
             playRadio(radios!![currentPosition])
         }
         binding.btnPrevious.setOnClickListener {
             previousChannel(radios?.size)
-            mediaPlayer.reset()
+            mediaPlayer?.reset()
             playRadio(radios!![currentPosition])
         }
     }
@@ -94,7 +95,7 @@ class RadioFragment : Fragment() {
 
     private fun playRadio(radio: Radio?) {
         binding.textView.text = radio?.name
-        mediaPlayer.apply {
+        mediaPlayer?.apply {
             setDataSource(radio?.url)
             prepare()
             start()
@@ -113,6 +114,7 @@ class RadioFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        mediaPlayer.release()
+        mediaPlayer?.release()
+        mediaPlayer = null
     }
 }
