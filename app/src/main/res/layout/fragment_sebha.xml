@@ -6,55 +6,15 @@
     android:layout_height="match_parent"
     android:padding="4dp">
 
-    <!--<ImageView
-        android:id="@+id/body_of_seb7a"
+
+    <ImageView
+        android:id="@+id/head_of_seb7a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/body_of_seb7a"
+        app:layout_constraintStart_toStartOf="@+id/body_of_seb7a"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tasbih" />-->
-
-
-
-    <TextView
-        android:id="@+id/tasbeh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="@string/number_of_praises"
-        android:textColor="@color/textFragmentColor"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/seb7a_counter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/seb7a_counter"
-        android:layout_width="69dp"
-        android:layout_height="81dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/counter_background"
-        android:gravity="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tasbe7_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="30" />
-
-    <Button
-        android:id="@+id/tasbe7_btn"
-        android:layout_width="172dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/viewColor"
-        android:textSize="24sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="سبحان الله" />
+        app:srcCompat="@drawable/head_of_seb7a" />
 
     <ImageView
         android:id="@+id/body_of_seb7a"
@@ -66,13 +26,46 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/body_of_seb7a" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <TextView
+        android:id="@+id/tasbeh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/body_of_seb7a"
-        app:layout_constraintStart_toStartOf="@+id/body_of_seb7a"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/head_of_seb7a" />
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/el_messiri_semi_bold"
+        android:text="@string/number_of_praises"
+        android:textColor="@color/textFragmentColor"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/seb7a_counter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/seb7a_counter"
+        android:layout_width="69dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/bg_counter"
+        android:fontFamily="@font/qadasi_regular"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tasbe7_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="30" />
+
+    <Button
+        android:id="@+id/tasbe7_btn"
+        android:layout_width="172dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/viewColor"
+        android:fontFamily="@font/jf_flat_regular"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="سبحان الله" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ class HadithFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentHadithBinding.inflate(inflater, container, false)
         return binding.root
@@ -50,10 +50,10 @@ class HadithFragment : Fragment() {
     private fun showHadithTitle(ahadeethList: MutableList<Hadith>) {
         hadithAdaptor = HadithRecycleAdapter(ahadeethList)
         binding.hadithRecycleView.adapter = hadithAdaptor
-        hadithAdaptor.onHadithClickListener = HadithRecycleAdapter.OnHadithClickListener{item, _ ->
-            startHadithDetailsActivity(item)
-        }
-
+        hadithAdaptor.onHadithClickListener =
+            HadithRecycleAdapter.OnHadithClickListener { item, _ ->
+                startHadithDetailsActivity(item)
+            }
     }
 
     private fun startHadithDetailsActivity(hadith: Hadith) {

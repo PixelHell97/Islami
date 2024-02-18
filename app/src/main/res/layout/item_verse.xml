@@ -8,16 +8,17 @@
 
     <TextView
         android:id="@+id/verse_line"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@color/textColor"
         android:layout_margin="8dp"
+        android:gravity="center"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:fontFamily="@font/font_sura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="الفاتحه"/>
+        tools:text="الحمدلله رب العلمين" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
