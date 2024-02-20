@@ -1,5 +1,6 @@
 package com.pixel.islami.ui.home
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // applyTheme(getCurrentTheme())  // still working on it
+        // applyTheme(this, isDarkModeEnabled(this))
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         changeNightMode()
@@ -26,23 +27,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeNightMode() {
         binding.nightModeSwitcher.setOnClickListener {
-            toggleTheme()
+            toggleTheme(this)
         }
     }
 
-    private fun getCurrentTheme(): Boolean {
+    private fun isDarkModeEnabled(context: Context): Boolean {
         val prefs = getSharedPreferences(Constants.MY_PREF, Context.MODE_PRIVATE)
         return prefs.getBoolean(Constants.IS_DARK_MODE, false)
     }
 
-    private fun toggleTheme() {
-        val currentTheme = getCurrentTheme()
-        val newTheme = !currentTheme
-        saveNewTheme(newTheme)
-        applyTheme(newTheme)
+    private fun toggleTheme(context: Context) {
+        val currentTheme = isDarkModeEnabled(context)
+        saveDarkModeState(context, !currentTheme)
+        applyTheme(context, !currentTheme)
     }
 
-    private fun applyTheme(newTheme: Boolean) {
+    private fun applyTheme(context: Context, newTheme: Boolean) {
         when (newTheme) {
             false -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -52,10 +52,10 @@ class MainActivity : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             }
         }
-        recreate()
+        (context as? Activity)?.recreate()
     }
 
-    private fun saveNewTheme(newTheme: Boolean) {
+    private fun saveDarkModeState(context: Context, newTheme: Boolean) {
         val editor = getSharedPreferences(Constants.MY_PREF, Context.MODE_PRIVATE).edit()
         editor.putBoolean(Constants.IS_DARK_MODE, newTheme)
         editor.apply()

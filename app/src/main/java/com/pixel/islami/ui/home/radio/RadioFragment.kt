@@ -59,37 +59,43 @@ class RadioFragment : Fragment() {
     private fun initRadios(radios: List<Radio?>?) {
         mediaPlayer = MediaPlayer()
         binding.btnPlay.setOnClickListener {
-            if (!mediaPlayer!!.isPlaying) {
-                mediaPlayer?.reset()
-                playRadio(radios!![currentPosition])
-            } else {
-                mediaPlayer?.pause()
-                binding.btnPlay.setImageResource(R.drawable.ic_play)
+            mediaPlayer?.let { player ->
+                if (!player.isPlaying) {
+                    player.reset()
+                    playRadio(radios?.get(currentPosition))
+                } else {
+                    player.pause()
+                    binding.btnPlay.setImageResource(R.drawable.ic_play)
+                }
             }
         }
         binding.btnNext.setOnClickListener {
             nextChanel(radios?.size)
             mediaPlayer?.reset()
-            playRadio(radios!![currentPosition])
+            playRadio(radios?.get(currentPosition))
         }
         binding.btnPrevious.setOnClickListener {
             previousChannel(radios?.size)
             mediaPlayer?.reset()
-            playRadio(radios!![currentPosition])
+            playRadio(radios?.get(currentPosition))
         }
     }
 
     private fun previousChannel(radiosSize: Int?) {
         currentPosition--
         if (currentPosition < 0) {
-            currentPosition = radiosSize!! - 1
+            radiosSize?.let { listSize ->
+                currentPosition = listSize - 1
+            }
         }
     }
 
     private fun nextChanel(radiosSize: Int?) {
         currentPosition++
-        if (currentPosition >= radiosSize!!) {
-            currentPosition = 0
+        radiosSize?.let { listSize ->
+            if (currentPosition >= listSize) {
+                currentPosition = 0
+            }
         }
     }
 
